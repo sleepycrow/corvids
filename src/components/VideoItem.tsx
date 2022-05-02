@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import { VideoResultItem } from "../utils/apiTypes";
-import { getVideoThumbnail, secondsToTime } from "../utils/ui";
+import { getVideoThumbnail, hasValidProperty, secondsToTime } from "../utils/ui";
 
 
 export function VideoItem(props: {video: VideoResultItem}): ReactElement<{video: VideoResultItem}> { 
@@ -17,9 +17,9 @@ export function VideoItem(props: {video: VideoResultItem}): ReactElement<{video:
           {props.video.title}
         </div>
         <div className='video-item__meta'>
-          {props.video.hasOwnProperty('author') && renderMetaItem('account_circle', props.video.author)}
-          {props.video.hasOwnProperty('viewCount') && renderMetaItem('visibility', props.video.viewCount.toLocaleString())}
-          {props.video.hasOwnProperty('publishedText') && renderMetaItem('event', props.video.publishedText)}
+          {hasValidProperty(props.video, 'author') && renderMetaItem('account_circle', props.video.author)}
+          {hasValidProperty(props.video, 'viewCount') && renderMetaItem('visibility', props.video.viewCount.toLocaleString())}
+          {hasValidProperty(props.video, 'publishedText') && renderMetaItem('event', props.video.publishedText)}
         </div>
       </div>
     </Link>

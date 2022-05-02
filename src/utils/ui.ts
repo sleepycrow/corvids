@@ -47,3 +47,14 @@ export function getVideoThumbnail(thumbs: Array<VideoThumbnail>, quality: string
 
   return thumbs[0]
 }
+
+export function hasValidProperty(obj: any, key: string): boolean{
+  if(typeof obj === 'object')
+    return (Object.hasOwn(obj, key) && obj[key] !== null)
+  else
+    return false
+}
+
+export function hereButDifferentHost(newHost: string): string{
+  return newHost + window.location.pathname + window.location.search
+}

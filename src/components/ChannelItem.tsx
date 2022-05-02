@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import { ChannelResultItem } from "../utils/apiTypes";
-import { getBiggestThumbnail } from "../utils/ui";
+import { getBiggestThumbnail, hasValidProperty } from "../utils/ui";
 
 
 export function ChannelItem(props: {channel: ChannelResultItem}): ReactElement<{video: ChannelResultItem}> { 
@@ -16,8 +16,8 @@ export function ChannelItem(props: {channel: ChannelResultItem}): ReactElement<{
           {props.channel.author}
         </div>
         <div className='video-item__meta'>
-          {props.channel.hasOwnProperty('subCount') && renderMetaItem('people', props.channel.subCount.toLocaleString())}
-          {props.channel.hasOwnProperty('videoCount') && renderMetaItem('video_library', props.channel.videoCount.toLocaleString())}
+          {hasValidProperty(props.channel, 'subCount') && renderMetaItem('people', props.channel.subCount.toLocaleString())}
+          {hasValidProperty(props.channel, 'videoCount') && renderMetaItem('video_library', props.channel.videoCount.toLocaleString())}
         </div>
       </div>
     </Link>

@@ -6,7 +6,7 @@ import { VideoItem } from "../components/VideoItem";
 import { VideoPlayer } from "../components/VideoPlayer";
 import { getVideo } from "../utils/api";
 import { VideoInformation } from "../utils/apiTypes";
-import { setPageTitle } from "../utils/ui";
+import { hereButDifferentHost, setPageTitle } from "../utils/ui";
 
 
 export function Video(): ReactElement<{}>{
@@ -84,17 +84,17 @@ function renderVideoPage(videoInfo: VideoInformation, error: string){
           <div className="info__description" dangerouslySetInnerHTML={{__html: descriptionHtml}}></div>
 
           <div className="info__links">
-            <a href={"https://youtube.com/watch?v="+videoInfo.videoId} target="_blank">YouTube</a>
-            <a href={"https://invidio.us/watch?v="+videoInfo.videoId} target="_blank">Invidious</a>
-            <a href={"https://piped.kavin.rocks/watch?v="+videoInfo.videoId} target="_blank">Piped</a>
-            <a href={"https://tube.cadence.moe/watch?v="+videoInfo.videoId} target="_blank">Cloudtube</a>
+            <a href={hereButDifferentHost('https://youtube.com')} target="_blank">YouTube</a>
+            <a href={hereButDifferentHost('https://invidio.us')} target="_blank">Invidious</a>
+            <a href={hereButDifferentHost('https://piped.kavin.rocks')} target="_blank">Piped</a>
+            <a href={hereButDifferentHost('https://tube.cadence.moe')} target="_blank">Cloudtube</a>
           </div>
         </section>
 
         <section className="video__author">
           <div className="author__profile">
             <Link to={"/channel/"+videoInfo.authorId} title={videoInfo.author}>
-              <img src={videoInfo.authorThumbnails[0].url} alt={videoInfo.author} />
+              <img src={videoInfo.authorThumbnails.length > 0 ? videoInfo.authorThumbnails[0].url : ''} alt={videoInfo.author} />
               <strong>{videoInfo.author}</strong>
             </Link>
           </div>
