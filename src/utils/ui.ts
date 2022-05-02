@@ -1,6 +1,6 @@
 import { AuthorThumbnail, VideoThumbnail } from "./apiTypes";
 
-export const appName = "Crowtube"
+export const appName = "Corvids"
 
 export function setPageTitle(title: string | null){
 	if(typeof title !== 'string' || title.length === 0)

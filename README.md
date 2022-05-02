@@ -1,4 +1,4 @@
-# Crowtube
+# Corvids
 
 A quick and dirty Invidious frontend, because I didn't like the existing ones lmao.
 
