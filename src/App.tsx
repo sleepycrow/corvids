@@ -39,7 +39,7 @@ function App() {
       </Routes>
       
       <footer>
-        <a href="https://github.com/sleepycrow/crowtube">Source Code</a>
+        <a href="https://github.com/sleepycrow/corvids">Source Code</a>
       </footer>
     </div>
   );
