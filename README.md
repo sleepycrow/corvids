@@ -12,3 +12,9 @@ uuhhhh
 2. `npm install`
 3. (Optional, but highly recommended) Set a default API base URL in `src/utils/api.ts`
 4. `npm run build` 👏️
+
+## To-do
+
+* A nice, glossy, featureful video player
+* Playlist support
+* Pagination for channels, search results and playlists

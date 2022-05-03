@@ -377,7 +377,7 @@ header{
 	font-size: 0.8rem;
 }
 
-.video-list .video-item__title{
+.video-item__title{
 	display: -webkit-box;
 	box-orient: vertical;
 	-webkit-box-orient: vertical;
@@ -480,7 +480,8 @@ header{
 }
 
 .channel-info div{
-	margin: 1rem;
+	padding: 0 1rem;
+	margin: 1rem 0;
 }
 
 .channel-info__banner{
@@ -523,10 +524,6 @@ header{
 		display: inline-block;
 		vertical-align: middle;
 	}
-}
-
-.channel-info__description{
-	margin: 1rem;
 }
 
 /* FOOTER
