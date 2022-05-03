@@ -193,7 +193,7 @@ export type ChannelInformation = {
       "videoThumbnails": Array<VideoThumbnail>,
       "description": string,
       "descriptionHtml": string,
-      "viewCount": number,
+      "viewCount": number | null,
       "published": number,
       "publishedText": string,
       "lengthSeconds": number,

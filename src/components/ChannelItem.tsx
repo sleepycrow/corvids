@@ -16,8 +16,8 @@ export function ChannelItem(props: {channel: ChannelResultItem}): ReactElement<{
           {props.channel.author}
         </div>
         <div className='video-item__meta'>
-          {hasValidProperty(props.channel, 'subCount') && renderMetaItem('people', props.channel.subCount.toLocaleString())}
-          {hasValidProperty(props.channel, 'videoCount') && renderMetaItem('video_library', props.channel.videoCount.toLocaleString())}
+          {hasValidProperty(props.channel, 'subCount', 'number') && renderMetaItem('people', (props.channel.subCount as number).toLocaleString())}
+          {hasValidProperty(props.channel, 'videoCount', 'number') && renderMetaItem('video_library', (props.channel.videoCount as number).toLocaleString())}
         </div>
       </div>
     </Link>

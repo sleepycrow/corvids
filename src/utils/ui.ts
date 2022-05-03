@@ -48,9 +48,9 @@ export function getVideoThumbnail(thumbs: Array<VideoThumbnail>, quality: string
   return thumbs[0]
 }
 
-export function hasValidProperty(obj: any, key: string): boolean{
+export function hasValidProperty(obj: any, key: string, type: string): boolean{
   if(typeof obj === 'object')
-    return (Object.hasOwn(obj, key) && obj[key] !== null)
+    return (Object.hasOwn(obj, key) && typeof obj[key] === type && obj[key] !== null)
   else
     return false
 }

@@ -17,9 +17,9 @@ export function VideoItem(props: {video: VideoResultItem}): ReactElement<{video:
           {props.video.title}
         </div>
         <div className='video-item__meta'>
-          {hasValidProperty(props.video, 'author') && renderMetaItem('account_circle', props.video.author)}
-          {hasValidProperty(props.video, 'viewCount') && renderMetaItem('visibility', props.video.viewCount.toLocaleString())}
-          {hasValidProperty(props.video, 'publishedText') && renderMetaItem('event', props.video.publishedText)}
+          {hasValidProperty(props.video, 'author', 'string') && renderMetaItem('account_circle', props.video.author)}
+          {hasValidProperty(props.video, 'viewCount', 'number') && renderMetaItem('visibility', (props.video.viewCount as number).toLocaleString())}
+          {hasValidProperty(props.video, 'publishedText', 'string') && renderMetaItem('event', props.video.publishedText)}
         </div>
       </div>
     </Link>
