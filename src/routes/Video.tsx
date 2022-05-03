@@ -1,12 +1,13 @@
 import { ReactElement, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { AltLinks } from "../components/AltLinks";
 import { ErrorPlaceholder } from "../components/ErrorPlaceholder";
 import { LoadingPlaceholder } from "../components/LoadingPlaceholder";
 import { VideoItem } from "../components/VideoItem";
 import { VideoPlayer } from "../components/VideoPlayer";
 import { getVideo } from "../utils/api";
 import { VideoInformation } from "../utils/apiTypes";
-import { hereButDifferentHost, setPageTitle } from "../utils/ui";
+import { setPageTitle } from "../utils/ui";
 
 
 export function Video(): ReactElement<{}>{
@@ -83,12 +84,7 @@ function renderVideoPage(videoInfo: VideoInformation, error: string){
 
           <div className="info__description" dangerouslySetInnerHTML={{__html: descriptionHtml}}></div>
 
-          <div className="info__links">
-            <a href={hereButDifferentHost('https://youtube.com')} target="_blank">YouTube</a>
-            <a href={hereButDifferentHost('https://invidio.us')} target="_blank">Invidious</a>
-            <a href={hereButDifferentHost('https://piped.kavin.rocks')} target="_blank">Piped</a>
-            <a href={hereButDifferentHost('https://tube.cadence.moe')} target="_blank">Cloudtube</a>
-          </div>
+          <AltLinks />
         </section>
 
         <section className="video__author">

@@ -1,11 +1,12 @@
 import { ReactElement, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AltLinks } from "../components/AltLinks";
 import { ErrorPlaceholder } from "../components/ErrorPlaceholder";
 import { LoadingPlaceholder } from "../components/LoadingPlaceholder";
 import { VideoItem } from "../components/VideoItem";
 import { getChannel } from "../utils/api";
 import { ChannelInformation } from "../utils/apiTypes";
-import { setPageTitle, getBiggestThumbnail, hereButDifferentHost } from "../utils/ui";
+import { setPageTitle, getBiggestThumbnail } from "../utils/ui";
 
 
 export function Channel(): ReactElement<{}>{
@@ -72,12 +73,7 @@ function renderChannelPage(channelInfo: ChannelInformation, error: string){
 
         <div className="channel-info__description" dangerouslySetInnerHTML={{__html: descriptionHtml}}></div>
 
-        <div className="info__links">
-          <a href={hereButDifferentHost('https://youtube.com')} target="_blank">YouTube</a>
-          <a href={hereButDifferentHost('https://invidio.us')} target="_blank">Invidious</a>
-          <a href={hereButDifferentHost('https://piped.kavin.rocks')} target="_blank">Piped</a>
-          <a href={hereButDifferentHost('https://tube.cadence.moe')} target="_blank">Cloudtube</a>
-        </div>
+        <AltLinks />
       </div>
 
       <div className='video-list video-list--big'>

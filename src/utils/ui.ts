@@ -54,7 +54,3 @@ export function hasValidProperty(obj: any, key: string): boolean{
   else
     return false
 }
-
-export function hereButDifferentHost(newHost: string): string{
-  return newHost + window.location.pathname + window.location.search
-}
