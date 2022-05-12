@@ -18,3 +18,4 @@ uuhhhh
 * A nice, glossy, featureful video player
 * Playlist support
 * Pagination for channels, search results and playlists
+* A simple, light, [NewLeaf-like](https://git.sr.ht/~cadence/NewLeaf) [youtubei-based](https://npmjs.com/package/youtubei) backend
